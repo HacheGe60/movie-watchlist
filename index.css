@@ -4,12 +4,15 @@
     box-sizing: border-box;
 }
 
+html,
 body {
     font-family: 'Inter', sans-serif;
     background-color: #1c1c1c;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
+
 
 .light {
     --bc-main: #fff;
@@ -57,13 +60,14 @@ header a {
 
 main {
     width: 100%;
-    height: 73%;
+    height: calc(73%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
     position: relative;
+    overflow: auto;
 }
 
 .pre-search {
@@ -93,14 +97,14 @@ main {
 }
 
 .search {
-    position: absolute;
-    top: 0%;
+    top: 27%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    position: fixed
 }
 
 .search .input-container {
@@ -141,5 +145,108 @@ main {
     border-bottom-right-radius: 0.25rem;
     background-color: var(--bc-secondary);
     color: #333333;
+    outline: none;
+}
+
+.movie {
+    width: 80%;
+    height: 9.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
     cursor: pointer;
+    margin: 1rem auto;
+    color: #333333;
+    border-bottom: 1px solid #cccccc;
+}
+
+.movie img {
+    width: 6.2rem;
+    height: 80%;
+    object-fit: cover;
+}
+
+.movie-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    padding-top: 1rem;
+}
+
+.movie-info-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.movie-info-header h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333333;
+    margin: 0;
+}
+
+.movie-info-header p {
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #666666;
+}
+
+.movie-info-header p i {
+    font-size: 0.7rem;
+    color: #FFD700;
+}
+
+.movie-info ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+}
+
+.movie-info ul li {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #333333;
+}
+
+.movie-info ul button {
+    background-color: transparent;
+    border: none;
+    font-size: 0.7rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.movie-info .plot {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #666666;
+    margin-top: 0.5rem;
+    display: -webkit-box;
+    line-clamp: 3;
+    box-orient: vertical;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.results.with-margin {
+    margin-top: 70rem;
+}
+
+.watchlist-page .results {
+    margin-top: 6rem;
+}
+
+.results.margin-top {
+    margin-top: 2rem;
 }
